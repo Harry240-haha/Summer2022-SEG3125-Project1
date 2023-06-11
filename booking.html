@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <title>Booking - Ottawa Electronics</title>
+</head>
+
+<body>
+  <!-- Include Header -->
+  <div id="header"></div>
+
+  <!-- Main Body Content -->
+  <main>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link step-item" data-toggle="pill" data-target="#step1" href="#step1"> > Step 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link step-item" data-toggle="pill" data-target="#step2" href="#step2"> > Step 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link step-item" data-toggle="pill" data-target="#step3" href="#step3"> > Step 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link step-item" data-toggle="pill" data-target="#step4" href="#step4"> > Step 4</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="card mt-4">
+      <div class="card-body tab-content">
+        <div id="step1" class="tab-pane fade show active">
+          <h3>Step 1: Select your services:</h3>
+          <div id="serviceList">
+            <button class="service-btn selected">Service 1</button>
+            <button class="service-btn">Service 2</button>
+            <button class="service-btn">Service 3</button> <br>
+            <button class="service-btn">Service 4</button>
+            <button class="service-btn">Service 5</button>
+            <!-- Add more buttons for additional services -->
+          </div>
+          <div class="text-right">
+            <button class="btn btn-primary" onclick="navigateToStep('step2')">Next</button>
+          </div>
+        </div>
+
+        <div id="step2" class="tab-pane fade">
+          <h3>Step 2: Select a Specialist</h3>
+          <div class="specialist-list">
+            <div class="name-card">
+              <img src="images/specialist.jpg" alt="Specialist 1">
+              <h3>Specialist 1</h3>
+              <p>Description of Specialist 1</p>
+            </div>
+            <div class="name-card">
+              <img src="images/specialist.jpg" alt="Specialist 2">
+              <h3>Specialist 2</h3>
+              <p>Description of Specialist 2</p>
+            </div>
+            <div class="name-card">
+              <img src="images/specialist.jpg" alt="Specialist 3">
+              <h3>Specialist 3</h3>
+              <p>Description of Specialist 3</p>
+            </div>
+            <!-- Add more name cards for additional specialists -->
+          </div>
+          <div class="text-right">
+            <button class="btn btn-primary" id="nextBtn" onclick="navigateToStep('step3')">Next</button>
+          </div>
+        </div>
+
+        <div id="step3" class="tab-pane fade">
+          <h3>Step 3: Select Booking Time</h3>
+          <div class="booking-dialogue">
+            <div class="timeTable-content">
+              <div class="timeTable-dateSelector">
+                <p class="timeTable-title">Select an available date: </p>
+                <div class="timeTable-chooseWeek">
+                  <div role="button" tabindex="0" class="timeTable-dayItem active">
+                    <div><span>MON</span></div>
+                    <div>06/12</div>
+                  </div>
+                  <div role="button" tabindex="0" class="timeTable-dayItem">
+                    <div><span>TUE</span></div>
+                    <div>06/13</div>
+                  </div>
+                  <div role="button" tabindex="0" class="timeTable-dayItem">
+                    <div><span>WED</span></div>
+                    <div>06/14</div>
+                  </div>
+                  <div role="button" tabindex="0" class="timeTable-dayItem disabled">
+                    <div><span>THUR</span></div>
+                    <div>06/15</div>
+                  </div>
+                  <div role="button" tabindex="0" class="timeTable-dayItem disabled">
+                    <div><span>FRI</span></div>
+                    <div>06/16</div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeTable-timeSelector">
+                <p class="timeTable-title">Select an available time:</p>
+                <div class="timeTable-everyDay">
+                  <div class="timeTable-row" role="button" tabindex="0">
+                    <div class="timeTable-select"></div>
+                    <div class="timeTable-time">12:00 - 15:00</div>
+                    <div class="timeTable-status"><span class="timeTable-green">Available</span></div>
+                    <div class="timeTable-price">8.99$</div>
+                  </div>
+                  <div class="timeTable-row" role="button" tabindex="0">
+                    <div class="timeTable-select"></div>
+                    <div class="timeTable-time-KIa">15:00 - 18:00</div>
+                    <div class="timeTable-status"><span class="timeTable-green">Available</span></div>
+                    <div class="timeTable-price">8.99$</div>
+                  </div>
+                  <div class="timeTable-row" role="button" tabindex="0">
+                    <div class="timeTable-select"></div>
+                    <div class="timeTable-time">18:00 - 21:00</div>
+                    <div class="timeTable-status"><span class="timeTable-green">Available</span></div>
+                    <div class="timeTable-price">8.99$</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <button class="btn btn-primary" id="nextBtn" onclick="navigateToStep('step4')">Next</button>
+          </div>
+        </div>
+
+        <div id="step4" class="tab-pane fade">
+          <section class="contact-section">
+            <h3>Step 4: Provide Your Information</h3>
+            <div class="booking-form container">
+              <form class="contact-form" onsubmit="return onSubmit(event)">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+            </div>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <!--<button type="submit" class="btn btn-primary" data-toggle="modal"
+                data-target="#booking-success-modal">Submit</button>-->
+            </div>
+          </form>
+          </section>
+        </div>
+
+        <!-- Add the modal markup at the appropriate location in your HTML -->
+        <div class="modal fade" id="booking-success-modal" tabindex="-1" role="dialog"
+          aria-labelledby="booking-success-modal-label" aria-hidden="true" data-backdrop="static">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="booking-success-modal-label">Booking Submitted Successfully</h5>
+              </div>
+              <div class="modal-body">
+                <p>Your booking has been submitted successfully!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                  onclick="window.location.href='index.html'">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer text-right">
+      </div>
+    </div>
+  </main>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

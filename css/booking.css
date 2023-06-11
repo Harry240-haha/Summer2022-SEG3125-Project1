@@ -1,0 +1,208 @@
+main {
+    padding: 0px 20px;
+}
+
+/* Sub-navigation bar */
+.navbar {
+    background-color: #f8f9fa;
+  }
+  
+  .nav-item {
+    opacity: 0.9;
+  }
+
+  .nav-item .nav-link.active {
+    font-weight: bold;
+  }
+  
+  /* Dialogue */
+  .card {
+    border-radius: 10px;
+    background-color: #4388CC40;
+  }
+  
+  .card-body {
+    padding: 20px;
+    background-color: #4388CC40;
+  }
+  
+  .step-content {
+    display: none;
+  }
+  
+  .step-content:first-child {
+    display: block;
+  }
+  
+  .card-footer {
+    background-color: #4388CC40;
+    border-top: none;
+    text-align: right;
+  }
+  
+  /* Buttons */
+  .text-right .btn {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  
+  /* Step List */
+  .step-item {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .step-item.active {
+    color: #fff;
+  }
+  
+  .step-item:not(.active):hover {
+    background-color: #007bff;
+    color: #fff;
+    opacity: 0.8;
+  }
+
+  .step-item:not(.active):hover a.nav-link {
+    color: #fff;
+  }
+  
+  .step-item:not(.active) {
+    opacity: 0.5;
+  }
+
+/* Step 1 */
+div#step1 .service-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  div#step1 .service-btn.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+/* Step 2 */
+.specialist-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .name-card {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-right:  20px;
+    margin-bottom: 20px;
+  }
+
+  .name-card.selected {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .name-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .name-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .name-card p {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+/* Step 3 */
+.timeTable-content {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.timeTable-dateSelector {
+  margin-bottom: 0px;
+  padding: 13px 60px;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid #007bff;
+}
+
+.timeTable-title {
+  color: #007bff;
+  margin-bottom: 12px;
+  font-size: 18 px;
+  font-weight: bold;
+}
+
+.timeTable-chooseWeek {
+}
+
+.timeTable-dayItem {
+  display: inline-block;
+  width: 68px;
+  margin-right: 20px;
+  padding: 8px;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.timeTable-dayItem.active {
+  color: white;
+  background-color: #007bff90;
+}
+
+.timeTable-dayItem.disabled {
+  pointer-events: none;
+  color: grey;
+  opacity: 0.4;
+}
+
+.timeTable-timeSelector {
+  padding: 13px 60px;
+  background-color: #fbfbfb;
+}
+
+.timeTable-row {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.timeTable-select {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  border: 1px solid #007bff;
+  border-radius: 12px;
+}
+
+.timeTable-select.selected {
+  background-color: #007bff;
+}

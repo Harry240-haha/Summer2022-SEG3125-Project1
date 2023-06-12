@@ -29,8 +29,6 @@ $(function() {
       $('.timeTable-everyDay .timeTable-row').find('.timeTable-select').removeClass('selected');
       $(this).find('.timeTable-select').toggleClass('selected');
     });
-    /// submit
-    //$('#booking-success-modal').modal('show');
   
   });
 
